@@ -10,25 +10,21 @@ const style = {
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
-  const scroll = useRef();
+  //const scroll = useRef();
+
 
   useEffect(() => {
-    const q = query(collection(db, 'messages'), orderBy('timestamp'));
+    const q = query(collection(db, 'messages'), orderBy('timestamp', 'desc'));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let messages = [];
       querySnapshot.forEach((doc) => {
         messages.push({ ...doc.data(), id: doc.id });
-      });
+      });     
       setMessages(messages);
+
     });
     return () => unsubscribe();
   }, []);
-
-  useEffect(() => {
-    scroll.current.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
-
-
 
   return (
     <>
@@ -39,8 +35,8 @@ const Chat = () => {
           ))}
       </main>
       {/* Send Message Component */}
-      <SendMessage scroll={scroll} className="overflow-y-auto" />
-      <span ref={scroll}></span>
+       <SendMessage /> {/* scroll={scroll} className="overflow-y-auto" */}
+      {/* <span ref={scroll}></span> */}
     </>
   );
 };
