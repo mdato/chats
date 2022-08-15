@@ -12,7 +12,6 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   //const scroll = useRef();
 
-
   useEffect(() => {
     const q = query(collection(db, 'messages'), orderBy('timestamp', 'desc'));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
