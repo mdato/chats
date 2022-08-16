@@ -2,7 +2,7 @@ import React from 'react'
 import {auth} from '../firebase'
 
 const style = {
-    button: `bg-gray-200 px-4 py-2 hover:bg-gray-100`
+    button: `bg-[#212121] px-4 py-0`
 }
 
 
@@ -13,7 +13,7 @@ const signOut = () => {
 
   return (
     <button onClick={() => auth.signOut()} className={style.button}>
-        Logout
+        <img width='40px' src={'https://cdn-icons-png.flaticon.com/512/7756/7756285.png'} />
     </button>
   )
 }
