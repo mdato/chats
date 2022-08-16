@@ -10,7 +10,7 @@ const style = {
   sectionContainer: `overflow-auto flex flex-col h-[90vh] bg-gray-100 mt-10 shadow-xl border relative`,
 };
 
-function App() {
+const App = () => {
   const [user] = useAuthState(auth);
   //  console.log(user)
   return (
