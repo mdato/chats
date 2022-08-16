@@ -5,9 +5,10 @@ import { auth } from "../firebase";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 
 const style = {
-  centrar: `flex justify-center w-full h-full`,
+  // centrar: `flex justify-center w-full h-full`,
+  // button: `bg-[#212121] px-4 py-0`,
   button: `bg-[#212121] px-4 py-0`,
-  h5: `text-white text-[12px]`,
+  // h5: `text-white text-[12px]`,
 };
 
 const googleSignIn = () => {
